@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+    <!-- - ================================================================================== -->
+    
+    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4" style="background-image: url('{% static "images/bg_1.jpg" %}')">
+        <div class="container">
+          <div class="row align-items-start justify-content-center">
+            <div class="col-sm-2 mt-4 person">
+                <img src="{{course.teacher_id.image.url}}" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-sm-10 mb-4">
+              <h2 >{{course.title}}</h2>
+            </div>
+          </div>
+        </div>
+      </div> 
+    
+
+    <div class="custom-breadcrumns border-bottom">
+      <div class="container">
+        <a href="/home/">Home</a>
+        <span class="mx-3 icon-keyboard_arrow_right"></span>
+        <a href="{% url 'courses' %}">Courses</a>
+        <span class="mx-3 icon-keyboard_arrow_right"></span>
+        <span class="current">{{course.title}}</span>
+      </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4" style="margin-top:10%;">
+                    <p>
+                        <img src="{{course.image.url}}" alt="Image" class="img-fluid">
+                    </p>
+                </div>
+                <div class="col-lg-5 ml-auto align-self-center">
+                        <h2 class="section-title-underline mb-5">
+                            <span>Course Details</span>
+                        </h2>
+                        
+                        <p><strong class="text-black d-block">Teacher:</strong>{{course.teacher_id.user_id.first_name}} {{course.teacher_id.user_id.first_name}}</p>
+                        <p class="mb-5"><strong class="text-black d-block">Hours:</strong> 8:00 am &mdash; 9:30am</p>
+                        <p>{{course.brief_desc}}</p>
+                        <p>{{course.table_of_content}}</p>
+    
+                        <ul class="ul-check primary list-unstyled mb-5">
+                            <li>Lorem ipsum dolor sit amet consectetur</li>
+                            <li>consectetur adipisicing  </li>
+                            <li>Sit dolor repellat esse</li>
+                            <li>Necessitatibus</li>
+                            <li>Sed necessitatibus itaque </li>
+                        </ul>
+
+                        <p>
+                            <a href="{% url 'course-videos' course_id=course.id%}" class="btn btn-primary rounded-0 btn-lg px-5">Enroll</a>
+                        </p>
+    
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-bg style-1" style="background-image: url('images/hero_1.jpg');">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+              <span class="icon flaticon-mortarboard"></span>
+              <h3>Our Philosphy</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea? Dolore, amet reprehenderit.</p>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+              <span class="icon flaticon-school-material"></span>
+              <h3>Academics Principle</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea?
+                Dolore, amet reprehenderit.</p>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+              <span class="icon flaticon-library"></span>
+              <h3>Key of Success</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis recusandae, iure repellat quis delectus ea?
+                Dolore, amet reprehenderit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+{% endblock %}
